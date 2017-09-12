@@ -1,0 +1,19 @@
+language: android
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-26.0.1
+    - android-26
+    - extra-android-m2repository
+  licenses:
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
+
+# Workaround for ConstraintLayout license
+# https://stackoverflow.com/questions/37615379/travis-ci-build-doesnt-work-with-android-constraint-layout/40144426#40144426
+before_install:
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
