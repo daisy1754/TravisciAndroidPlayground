@@ -20,4 +20,4 @@ before_install:
 
 after_failure:
   - git clone --depth 1 https://github.com/daisy1754/pretty-android-lint.git
-  - cd $TRAVIS_BUILD_DIR/pretty-android-lint; ./gradlew gradle -q run -Dexec.args="$TRAVIS_BUILD_DIR/app/build/outputs/lint-results.xml"
+  - cd $TRAVIS_BUILD_DIR/pretty-android-lint; ./gradlew -q run -Dexec.args=$TRAVIS_BUILD_DIR/app/build/outputs/lint-results.xml"
