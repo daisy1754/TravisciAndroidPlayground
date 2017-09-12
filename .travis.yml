@@ -11,6 +11,13 @@ android:
     - android-sdk-license-.+
     - google-gdk-license-.+
 
+# Supress emails. This project is used to intentionally break build to play with travisci, and no
+# email alert is needed.
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+
 # Workaround for ConstraintLayout license
 # https://stackoverflow.com/questions/37615379/travis-ci-build-doesnt-work-with-android-constraint-layout/40144426#40144426
 before_install:
